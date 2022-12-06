@@ -1,0 +1,26 @@
+ .tfo{
+			color: rgba(88, 67, 6, 0.962); 
+margin-left:40%;
+	margin-top:-10%;
+			}
+.tfo :hover{
+		color: rgba(88, 67, 6, 0.962);  
+		
+		}
+		
+.title{
+	margin-left: 28%;
+	margin-top:3%;
+	
+}
+.form-group{
+	margin-left:36%;
+	
+}
+.top{
+	margin-right:0%
+}
+button{
+	margin-left:37%;
+	margin-top:-23%;
+}

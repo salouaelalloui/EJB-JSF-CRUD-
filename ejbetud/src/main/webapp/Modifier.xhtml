@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+   
+    <title>JSF JPA Crud Etudiant</title>
+    <link rel="stylesheet" href="css/bootstrap.css"> </link>
+    <link rel="stylesheet" href="css/ccm.css"> </link>
+    <h:outputStylesheet library="css" name="ccm.css"/>
+
+</h:head>
+<h:body>
+
+<h:form id="form">
+ <h2 class="title">Modification des informations des étudiants</h2>
+<div class="form-group">
+           
+            <div class="col-sm-4"><h:outputText value="" styleClass="text text-success" /></div>
+        </div>
+        <div class="form-group">
+          <h:inputHidden id="etudiant-idetudiant" value="#{etudiantManagedBean.id_etudiant}" styleClass="form-control" required="true" requiredMessage="Etudiant Prenom non vide" />
+            <h:outputLabel for="name" styleClass="control-label col-sm-4">Nom:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="etudiant-nom" value="#{etudiantManagedBean.nom}" styleClass="form-control" required="true" requiredMessage="Etudiant Nom non vide" />
+            </div>
+            <h:message for="etudiant-nom" styleClass="text text-danger" />
+        </div>  
+         <div class="form-group">
+            <h:outputLabel for="name" styleClass="control-label col-sm-4">Prenom:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="etudiant-prenom" value="#{etudiantManagedBean.prenom}" styleClass="form-control" required="true" requiredMessage="Etudiant Prenom non vide" />
+            </div>
+            <h:message for="etudiant-prenom" styleClass="text text-danger" />
+        </div> 
+         <div class="form-group">
+            <h:outputLabel for="name" styleClass="control-label col-sm-4">Adresse:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="etudiant-adresse" value="#{etudiantManagedBean.adresse}" styleClass="form-control" required="true" requiredMessage="Etudiant adresse non vide" />
+            </div>
+            <h:message for="etudiant-nom" styleClass="text text-danger" />
+        </div> 
+        <div class="form-group">
+            <h:outputLabel for="cne" styleClass="control-label col-sm-4">CNE:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="etudiant-cnee" value="#{etudiantManagedBean.cne}" styleClass="form-control" required="true" requiredMessage="cne Etudiant non vide" />
+            </div>
+            <h:message for="etudiant-cne" styleClass="text text-danger" />
+        </div>      
+          <div class="form-group">
+            <h:outputLabel for="niveau" styleClass="control-label col-sm-4">NIVEAU:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="etudiant-niveau" value="#{etudiantManagedBean.niveau}" styleClass="form-control" required="true" requiredMessage="niveau Etudiant non vide" />
+            </div>
+            <h:message for="etudiant-cne" styleClass="text text-danger" />
+        </div> 
+        <div class="form-group">
+            <div class="col-sm-2 col-sm-27" />
+            <div class="col-sm-4">
+                <div class="col-sm-2"><h:commandButton value="Modifier" action="#{etudiantManagedBean.editetudiant(etudiantManagedBean)}" styleClass="btn btn-dark btnWidth" /></div>
+                <div class="col-sm-1" />
+              <div class="col-sm-updated"> <div class="tfo"><h:outputLink value="listEtudiant.xhtml">List etudiant</h:outputLink></div> </div>
+            </div>
+        </div>
+
+
+
+</h:form>
+</h:body>
+
+</html>

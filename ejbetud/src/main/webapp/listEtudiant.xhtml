@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"  xmlns:h="http://java.sun.com/jsf/html"  xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />     
+    <title>JSF JPA Crud Etudiant</title>
+    <link rel="stylesheet" href="css/bootstrap.css"> </link>
+    <style type="text/css">
+        .tableUpdated {
+        	width: 90% !important;
+        	margin: 17px 58px 0 !important;
+        }
+        .btnSpace {
+        	margin: 17px;
+        }     
+    </style>
+</h:head>
+<h:body>
+       <h:form id="schoolForm">
+        <center><h:commandButton action="addEtudiant.xhtml" value="Ajouter Etudiant" styleClass="btn btn-dark btnSpace" /></center>
+    </h:form>
+    
+        <h:dataTable id="schoolTable" binding="#{table}" value="#{etudiantManagedBean.listerEtudiants()}" var="etudiant" styleClass="table table-striped table-bordered tableUpdated">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                <h:outputText value="#{etudiant.id_etudiant}" />                
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nom</f:facet>
+                <h:outputText value="#{etudiant.nom}" />
+            </h:column>
+             <h:column>
+                <f:facet name="header">Prenom</f:facet>
+             <h:outputText value="#{etudiant.prenom}" />
+            </h:column>
+             <h:column>
+                <f:facet name="header">adresse</f:facet>
+             <h:outputText value="#{etudiant.adresse}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">cne</f:facet>
+                <h:outputText value="#{etudiant.cne}" />
+            </h:column>
+             <h:column>
+                <f:facet name="header">Niveau</f:facet>
+                <h:outputText value="#{etudiant.niveau}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header"> </f:facet>
+                
+                 <h:form>
+                   <h:commandButton type="submit" id="update" value="Modifier" action="#{etudiantManagedBean.editetude(etudiant)}" styleClass="btn btn-dark btnSpace"/>
+                 </h:form>
+    
+            </h:column>
+              <h:column>
+                <f:facet name="header"></f:facet>
+                        <h:form>
+                        <h:commandButton value="Supprimer" action="#{etudiantManagedBean.delete(etudiant)}" styleClass="btn btn-dark btnSpace"/>
+                        </h:form>
+            </h:column>
+             
+
+            
+            
+        </h:dataTable>
+        
+        
+        
+    
+</h:body>
+</html>
